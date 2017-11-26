@@ -153,4 +153,4 @@ n + n/2 + n/4 + n/8 + n/16... = 2n as n => infinity.
 
 Therefore the merging in an O(n) operation.  
 
-The whole algorithm is O(nlogn + n) but since we throw away everything but the leading term, **the merge sort algorithm is `O(nlogn).`**
+The whole algorithm is O(nlogn + n) but since we throw away everything but the leading term, **the merge sort algorithm is** `O(nlogn).`
