@@ -48,7 +48,7 @@ It's getting quite lengthy, isn't it. Not to mention, the time complexity for th
 
 A heap is a data structure in which the top element is the largest (or, for a min-heap, the smallest) value within the heap. Each element has two children and each Node can be split off to be a new Heap.
 
-![alternative text](https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Max-Heap.svg/480px-Max-Heap.svg.png)
+![Max heap diagram](https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Max-Heap.svg/480px-Max-Heap.svg.png)
 
 So:
 1.  The root of each heap is the largest value in that heap
