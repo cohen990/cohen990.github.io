@@ -1,14 +1,12 @@
 # Jekyll configuration
 
-name: Blog Name
+name: Hacking Dan
 description: Software Developer
 
 # Url is currently only used only for the RSS feed in feed.xml
-url: http://streetturtle.github.io
-#url: http://localhost:4000
+url: http://blog.hackingdan.com
 
 # For a project page here should be a project name. Otherwise (for user's/organization's page leave it empty)
-baseurl: '/jekyll-clean-dark'
 
 share:
   facebook: true
@@ -19,8 +17,8 @@ share:
   email: true
 
 social:
-  github: streetturtle
-  stackoverflow: ''
+  github: cohen990
+  stackoverflow: 'cohen990'
   linkedin:
   instagram: ''
   lastfm: ''
