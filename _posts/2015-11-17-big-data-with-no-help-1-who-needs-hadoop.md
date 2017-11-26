@@ -1,3 +1,13 @@
+---
+layout: post
+title: "Big Data With No Help: Part 1 - Who Needs Hadoop?"
+date: 2015-11-17 16:25:06
+description: An introduction to heaps. Why and how you would use them.
+tags: 
+- bad-ideas
+- big-data
+- wikipedia 
+---
 # Who Needs Hadoop?
 
 I went to a MongoDB conference recently. There was a talk by one of the senior Mongo engineers where he did a live demonstration of dealing with big data using MongoDB. I guess this got me thinking about how this stuff really works under the hood.  
