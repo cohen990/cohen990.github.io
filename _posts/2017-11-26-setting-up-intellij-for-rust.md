@@ -32,13 +32,13 @@ This post is a part of the upcoming codurance series on different ways of settin
 7.  open project in IntelliJ by opening the project directory
     *   intellij may complain about not finding a cargo project
     *   try to attach it to the `cargo.toml` in your project root directory
-    *   may not help - IntelliJ tooling is not as good as it will be eventually
+    *   This may not get rid of the warning - the plugin should still be working as expected though
 
 There you are - you now have a functional rust environment. With code completion, code generation, syntax highlighting, suggestions and a test runner. Everything you need to get started.  
 
 ## Advanced Setup
 
-If you want your environment to do more, here are some of the tools I use to improve the work flow in rust and IntelliJ  
+If you want your environment to do more, here are some of the tools I use to improve the work flow in rust and IntelliJ.
 
 ### Format on save ([rustfmt](https://crates.io/crates/rustfmt/))
 
