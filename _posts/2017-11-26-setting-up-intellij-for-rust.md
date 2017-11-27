@@ -28,7 +28,7 @@ This post is a part of the upcoming codurance series on different ways of settin
 3.  cd to parent directory you want for your project
 4.  `cargo new my-project`
 5.  install IntelliJ [https://www.jetbrains.com/idea/](https://www.jetbrains.com/idea/)
-6.  install "Rust" plugin from repositories
+6.  install "Rust" plugin from the IntelliJ plugin repositories
 7.  open project in IntelliJ by opening the project directory
     *   intellij may complain about not finding a cargo project
     *   try to attach it to the `cargo.toml` in your project root directory
