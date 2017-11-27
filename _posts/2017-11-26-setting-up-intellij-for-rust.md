@@ -10,7 +10,7 @@ tags:
 - environments
 ---
 # Setting up IntelliJ for rust
-This post is a part of the upcoming codurance series on different ways of setting up your Rust development environment. This time it's IntelliJ
+This post is a part of the upcoming codurance series on different ways of setting up your Rust development environment. This time it's IntelliJ.
 
 ## My Environment
 
