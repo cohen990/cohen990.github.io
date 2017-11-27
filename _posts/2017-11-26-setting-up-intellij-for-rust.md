@@ -30,7 +30,7 @@ This post is a part of the upcoming codurance series on different ways of settin
 5.  install IntelliJ [https://www.jetbrains.com/idea/](https://www.jetbrains.com/idea/)
 6.  install "Rust" plugin from the IntelliJ plugin repositories
 7.  open project in IntelliJ by opening the project directory
-    *   intellij may complain about not finding a cargo project
+    *   IntelliJ may complain about not finding a cargo project
     *   try to attach it to the `cargo.toml` in your project root directory
     *   This may not get rid of the warning - the plugin should still be working as expected though
 
@@ -88,6 +88,7 @@ Now you have a rust environment capable of
 *   format on save
 *   continuous testing
 
+You should be aware that IntelliJ does not support rust debugging. If that's important to you, consider using another IDE such as visual studio code, CLion, vim or emacs. If you are attached to IntelliJ then you can use `rust-lldb` (installed by default with rustup) from the terminal.
 ## Questions ?
 Any questions ? Ask on https://users.rust-lang.org/ and ping me the link to the post on Twitter or email it to me at dan.cohen@codurance.com. This way the answer will be visible to everyone in the community.
 
