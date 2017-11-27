@@ -10,6 +10,7 @@ tags:
 - environments
 ---
 # Setting up IntelliJ for rust
+This post is a part of the upcoming codurance series on different ways of setting up your Rust development environment. This time it's IntelliJ
 
 ## My Environment
 
@@ -86,3 +87,8 @@ Now you have a rust environment capable of
 *   linting suggestions
 *   format on save
 *   continuous testing
+
+## Questions ?
+Any questions ? Ask on https://users.rust-lang.org/ and ping me the link to the post on Twitter or email it to me at dan.cohen@codurance.com. This way the answer will be visible to everyone in the community.
+
+Keep on Rusting !
