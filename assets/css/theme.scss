@@ -17,7 +17,7 @@
 //********************************************************
 
 // Several accent colors, choose one or create your own!
-$accent-color: #3CA2A2;    // original =)
+$accent-color: #3CA9A9;    // original =)
 //$accent-color: #C38FD6;  // velvet
 //$accent-color: #8FD6B3;  // greenish
 //$accent-color: #35B4DE;  // bluish
@@ -41,11 +41,12 @@ body {
   color: $font-color;
   background: $background-color url(pics/background/#{$background-pattern});
 }
-.well {
+.card {
   background-color: $post-panel-color;
   box-shadow: 0 0 0 0, 0px 8px 16px rgba(0, 0, 0, 0.2);
   border: 0;
   border-radius: 6px;
+  padding: 0px 10px 10px 10px;
 }
 .main-page {
   width: 75%;
@@ -186,7 +187,7 @@ div.post-meta {
   border-width: 1px 0;
   border-color: #666666;
   border-style: solid;
-  margin: 0 0 20px;
+  margin: 0 0 5px;
   ul {
     display: inline;
     padding-left: 0;
