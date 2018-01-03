@@ -17,9 +17,9 @@ As before, the source code is available [on github](https://github.com/cohen990/
 
 Since my last experiment, I have implemented crossover - AKA a 2 parent evolutionary algorithm. I have also tried changing the network structure to have 2 smaller hidden layers instead of 1 large one. The hypothesis was that this would allow more complex structures and concepts to be understood by the network. Both of these approaches have failed and that has led me to conclude that this model is a failure. A network like this is not well suited to tetris.
 
-I have a new plan, involving a search tree and a Q-Learning process using a convolutional neural network as the state evaluator.
+My new plan involves a search tree and a Q-Learning process using a convolutional neural network as the state evaluator. The key realisation is that tetris is a 2 dimensional grid. It has spatial features that can be analysed similarly to a photograph. Categorisation problems with protographs were only solved once people started using deep convolutional neural networks and I think the same techniques can be applied to tetris.
 
-## What Success Looks Like
+## What I Was Hoping For
 
 My goal in this experiment has been to achieve a bot that can play tetris indefinitely. Given how quickly each decision is made and how fast the game clock runs, if a bot can survive for more than a second, I would consider that to be effectively sustainable.
 
@@ -27,7 +27,7 @@ My goal in this experiment has been to achieve a bot that can play tetris indefi
 
 I ran 3 different experiments attempting to get a functional tetris bot. They all failed and my final conclusion is that a fully connected neural network such as this one is not the appropriate tool for a tetris playing AI.
 
-### Crossover
+### The First Nail: Crossover
 
 My initial hypothesis was that the network wasn't evolving usefully because each network would generate different traits and clusters of understanding, but because they were unable to share them, the variation alone would not be enough to achieve results. I implemented crossover with multiple crossover points and a chance to make a crossover at any given point.
 
@@ -35,7 +35,7 @@ My initial hypothesis was that the network wasn't evolving usefully because each
 
 The graph plateaus at 1000 after a steep learning period between generations 200 and 400. The maximum never exceeds 50,000. 50,000 points is achieved by clearing at most 5 lines.
 
-### 2 Hidden Layers
+### The Second Nail: 2 Hidden Layers
 
 The following hypothesis was that a single hidden layer could not unwrap the complexity of the 2d space of the tetris board. I modified my implementation such that there were 2 hidden layers instead. Unfortunately, because my implementation in java was not optimized for space and because I am running my experiments on my home computer, 2 hidden layers at 1000 nodes each required more RAM than I had available. As such, I reduced the number of nodes in each hidden layer to 100. After reading around the subject, I had begun to believe that 1000 was overkill anyway.
 
@@ -43,15 +43,11 @@ This experiment ran for 6000 generations. It was able to run for many more gener
 
 [![graph of results plateauing at 2000 after 6000 generations]({{site.baseurl}}/assets/img/custom/blog/2018-01-02-tetris-failed-experiment-next-steps/2layers.png)]({{site.baseurl}}/assets/img/custom/blog/2018-01-02-tetris-failed-experiment-next-steps/2layers.png)
 
-This failed.
-
-### Maybe It's a Slow Learner?
+### The Final Nail: Maybe It's a Slow Learner?
 
 I finally out of desparation tried to run the experiment for much longer. I ran the experiment for over a week. It completed almost 30,000 generations before I got home from holiday.
 
 [![graph of results plateauing at 3000 after 30000 generations]({{site.baseurl}}/assets/img/custom/blog/2018-01-02-tetris-failed-experiment-next-steps/failed.png)]({{site.baseurl}}/assets/img/custom/blog/2018-01-02-tetris-failed-experiment-next-steps/failed.png)
-
-This too failed.
 
 ## Why has it failed?
 
