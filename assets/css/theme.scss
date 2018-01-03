@@ -25,6 +25,7 @@ $accent-color: #3CA9A9;    // original =)
 //$accent-color: #52B54B;  // green
 
 $font-color: #dddddd;
+$title-color: #289a9a;
 $background-color: #292929;
 $post-panel-color: #444;
 $footer-background-color: #292c2f;
@@ -62,6 +63,10 @@ h3 { font-size: 1.17em; }
 h4 { font-size: 1.12em; }
 h5 { font-size: .83em; }
 h6 { font-size: .75em; }
+
+h1, h2, h3, h4, h5, h6 {
+  color: $title-color;
+}
 
 img {
   display: inline-block;
