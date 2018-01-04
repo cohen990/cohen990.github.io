@@ -239,6 +239,8 @@ I believe there are three avenues within EA for dramatic improvement of performa
 
 New blog post to follow with results of the next experiment.
 
+Next experiment here: [Tetris AI Experiment 3, 4 & 5]({% post_url 2018-01-02-tetris-failed-experiment-next-steps %})
+
 ## References
 
 [https://en.wikipedia.org/wiki/Artificial_neural_network](https://en.wikipedia.org/wiki/Artificial_neural_network)
