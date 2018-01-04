@@ -237,8 +237,6 @@ I believe there are three avenues within EA for dramatic improvement of performa
 2.  Don't just take the best 500 - allow a chance for worse performing networks to survive to allow the solution to escape local minima
 3.  Abandon the fully connected neural network and implement a more complex architecture
 
-New blog post to follow with results of the next experiment.
-
 Next experiment here: [Tetris AI Experiment 3, 4 & 5]({% post_url 2018-01-02-tetris-failed-experiment-next-steps %})
 
 ## References
