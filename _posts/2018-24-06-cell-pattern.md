@@ -26,18 +26,18 @@ Each cell is responsible for it's own processing. It is triggered by a hormone a
 ```csharp
     public class ProcessingCell : Cell<InputValidated>
     {
-        public override Action<InputValidated> GetHormonalResponse()
+        public override Action<InputHormone> GetHormonalResponse()
         {
             return hormone => ProcessInput(hormone);
         }
 
-        public void ProcessInput(InputValidated hormone)
+        public void ProcessInput(InputHormone hormone)
         {
             String base64 = ConvertToBase64(hormone.Data);
             Emit(new ProcessingComplete(base64));
         }
 
-        private String ConvertToBase64(String data){
+        String ConvertToBase64(String data){
             byte[] bytes = System.Text.Encoding.ASCII.GetBytes(data);
             return Convert.ToBase64String(bytes);
         }
@@ -86,5 +86,7 @@ The individual hormones are very aneamic classes and are just used for data tran
         }
     }
 ```
+
+This currently looks a lot like an event bus. Because it's very similar. But in the future I believe this pattern could differentiate itself by taking influence from more concepts used in bodily computation.
 
 That's it! That's the concept. Let me know if you think it's interesting or if you have any ideas or suggestions!
