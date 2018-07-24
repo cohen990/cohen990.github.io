@@ -24,7 +24,7 @@ The example is converting from ASCII to base 64 and there are a few key concepts
 Each cell is responsible for it's own processing. It is triggered by a hormone and after it has completed its work, it will emit another hormone which will propagate through the system.
 
 ```csharp
-    public class ProcessingCell : Cell<InputValidated>
+    public class ProcessingCell : Cell<InputHormone>
     {
         public override Action<InputHormone> GetHormonalResponse()
         {
@@ -45,6 +45,23 @@ Each cell is responsible for it's own processing. It is triggered by a hormone a
 ```
 
 This is a full cell. The `GetHormonalResponse` method is on the base class and is used to register the cell with the Endocrine System.
+
+The behaviour is maintained within each cell because each cell can act independently on the hormones that are dispersed through the system. For example, you may wish to log the hormones that are being activated.
+
+```csharp
+    public class HormoneLoggingCell : Cell<Hormone>
+    {
+        public override Action<Hormone> GetHormonalResponse()
+        {
+            return hormone => LogHormone(hormone);
+        }
+
+        public void LogHormone(Hormone hormone)
+        {
+            Console.WriteLine("Hormone Emitted: " + hormone.GetType());
+        }
+    }
+```
 
 Registration can take play dynamically or all at initialization time, but there is no way to de-register a cell.
 
