@@ -63,7 +63,7 @@ The behaviour is maintained within each cell because each cell can act independe
     }
 ```
 
-Registration can take play dynamically or all at initialization time, but there is no way to de-register a cell.
+Registration can take place dynamically or all at initialization time, but there is no way to de-register a cell.
 
 
 ```csharp
