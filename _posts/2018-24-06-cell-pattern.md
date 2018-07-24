@@ -18,7 +18,7 @@ For me, the big difference in the computational ability of a biological system a
 This is a good question. This is definitely an exploratory project and I don't have the answers yet. It seems however that it would be very good for any system that eventually would be split apart, because it very strictly enforces decoupling. In the future, this design could be expanded to include clusters of cells comprising an organ which could be held in entirely different locations and the ability to parallelise would be built into the framework.
 
 # What will this look like?
-I have a working proof of concept here: https://github.com/cohen990/cell
+I have a working proof of concept here: [https://github.com/cohen990/cell](https://github.com/cohen990/cell)
 
 The example is converting from ASCII to base 64 and there are a few key concepts.
 Each cell is responsible for it's own processing. It is triggered by a hormone and after it has completed its work, it will emit another hormone which will propagate through the system.
