@@ -93,13 +93,13 @@ Registration can take play dynamically or all at initialization time, but there 
 The individual hormones are very aneamic classes and are just used for data transfer and behaviour triggering.
 
 ```csharp
-    public class ProcessingComplete : Hormone
+    public class InputHormone : Hormone
     {
-        public string Base64Encoded { get; }
+        public string Data { get; }
 
-        public ProcessingComplete(string base64Encoded)
+        public InputHormone(string data)
         {
-            Base64Encoded = base64Encoded;
+            Data = data;
         }
     }
 ```
