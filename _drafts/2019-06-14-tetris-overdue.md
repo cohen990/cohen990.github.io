@@ -1,10 +1,10 @@
-
 # Tetris - Convolutional Neural Network
 
 ##Long overdue
-The last update I published about this was 18 months ago ([read here]({{ site.baseurl }}{% link _posts/2018-01-02-tetris-failed-experiment-next-steps.md %})). I did this work almost a year ago and have been struggling to write out a blog post for it. The number of changes I went through to get from A->B made it very difficult and I got lost in the detail. The wonderful thing about human memory however is that details fade. So now, 18 months later, unburdened by all of the details, I am finally ready to write up the results! Enjoy. If you have any questions or comments, feel free to contact me at dan@devshell.co.uk
+The last update I published about this was 18 months ago ([read here]({{ site.baseurl }}{% link _posts/2018-01-02-tetris-failed-experiment-next-steps.md %})). I did this work almost a year ago and have been struggling to write out a blog post for it. The number of changes I went through to get from A->B made it very difficult and I got lost in the detail. The wonderful thing about human memory however is that details fade. So now, 18 months later, unburdened by all of the details, I am finally ready to write up the results! Enjoy. If you have any questions or comments, feel free to contact me at samantha@thoughtress.tech
 
 ## Long story short - it worked
+
 Let's make a very quick comparison.
 
 [![A: The old system]({{site.baseurl}}/assets/img/custom/blog/2018-01-02-tetris-failed-experiment-next-steps/failed.png)]({{site.baseurl}}/assets/img/custom/blog/2018-01-02-tetris-failed-experiment-next-steps/failed.png)
@@ -50,10 +50,10 @@ The process for playing a game would look like this.
 
 1. The system is given a Game State and a tetromino (the pieces in tetris are called tetrominoes, yes).
 2. The system discovers all legal final positions for that tetromino
-	1. If there are no legal final positions, then the game is over
+   1. If there are no legal final positions, then the game is over
 3. The system passes each of these possible positions into the neural network and the network evaluates some kind of "expected score". E.g. "If you make this move, I think you'll finish the game with 351 points". All of these evaluations are stored in memory.
 4. The system will most of the time choose the position with the highest expected score
-	1. Sometimes the system will pick a random position. This is known as "exploration"
+   1. Sometimes the system will pick a random position. This is known as "exploration"
 5. A new tetromino is randomly generated.
 6. The board state is updated
 7. Back to 1
@@ -62,7 +62,7 @@ The process for training the network is like this.
 
 1. After completion of a game, each move and the network's evaluation of it are retrieved from memory.
 2. You need both an evaluated result and an actual result. e.g. "I thought it would score 351 points in the end, but it was actually more like 120"
-	1. At first, it was enough to use the final score for the actual result of all of these positions, although that ended up changing later.
+   1. At first, it was enough to use the final score for the actual result of all of these positions, although that ended up changing later.
 3. This is used to adjust the neural network via back propagation
 
 After training, the next game would begin.
@@ -83,9 +83,9 @@ Well I swapped it in and hey! Look at that! It's working a lot better.... It's n
 
 ### Changing the type of error
 
-A neural network is a very strange machine. Essentially, the way they work is they have an *Error Function*. This error function is how you give feedback to the network. Think of a child. You ask the child to draw a dog and the child instead draws a cat. You gently explain to the child that a cat doesn't have ears like that and ask them to try again (assuming some kind of idealised child). This time the child draws a cat with dog ears and you explain how a dog's nose would look. Etc etc. Eventually the child can draw a dog! Well a neural network is _kind of_ like that. The error function is a "No, that's not quite right. It should be more like this.". The neural network can read this feedback in back propagation and use it to correct its behaviour.
+A neural network is a very strange machine. Essentially, the way they work is they have an _Error Function_. This error function is how you give feedback to the network. Think of a child. You ask the child to draw a dog and the child instead draws a cat. You gently explain to the child that a cat doesn't have ears like that and ask them to try again (assuming some kind of idealised child). This time the child draws a cat with dog ears and you explain how a dog's nose would look. Etc etc. Eventually the child can draw a dog! Well a neural network is _kind of_ like that. The error function is a "No, that's not quite right. It should be more like this.". The neural network can read this feedback in back propagation and use it to correct its behaviour.
 
-The *actual* goal of a neural network is to minimise this error. Every iteration, every time it trains, every single thing it learns is an attempt to reduce this error.
+The _actual_ goal of a neural network is to minimise this error. Every iteration, every time it trains, every single thing it learns is an attempt to reduce this error.
 
 I had a problem.
 The way I was calculating the error was a Mean Square Error function. So you take the difference between the expected score and the actual score and then square it.
@@ -94,7 +94,7 @@ Mean Square Error roughly: (Actual - Estimated)^2
 
 Sounds fine, right?
 
-Well... Not really. So when the network starts, it's basically randomly guessing how good each move is. And because it's randomly guessing, usually the games don't go that well. So it'll guess that a move is worth 100 points where actually it scores 0 points. The mean square error of this is in the region of 10,000 (0 - 100)^2. So the network is like "Whoa! Ok that was totally wrong. Let's adjust by a lot!". This time it guesses a move is worth 15 points. It's still not very good at what it does so it scores 0 again. This time the error is in the region of 225 (0 - 15)^2. So actually, the network is doing pretty well so far. The error is going down. It's getting more accurate at predicting. 
+Well... Not really. So when the network starts, it's basically randomly guessing how good each move is. And because it's randomly guessing, usually the games don't go that well. So it'll guess that a move is worth 100 points where actually it scores 0 points. The mean square error of this is in the region of 10,000 (0 - 100)^2. So the network is like "Whoa! Ok that was totally wrong. Let's adjust by a lot!". This time it guesses a move is worth 15 points. It's still not very good at what it does so it scores 0 again. This time the error is in the region of 225 (0 - 15)^2. So actually, the network is doing pretty well so far. The error is going down. It's getting more accurate at predicting.
 
 Ok looks good so far. The problem is when the network starts getting more capable.
 
@@ -123,13 +123,13 @@ Log(1000) = Log(10^3) = 3
 
 Let's take the numbers we were playing with before and run them through the MSLE.
 
-|Actual|Estimated|Mean Square| Mean Square Logarithmic (to 2 sig.fig.)|
-|------|---------|-----------|----------------------------------------|
-|     0|      100|     10,000|                                       4|
-|     0|       15|        225|                                     1.4|
-|     1|        0|          1|                                   0.091|
-|    10|        2|         64|                                    0.31|
-|10,000|    9,400|    360,000|                                 0.00072|
+| Actual | Estimated | Mean Square | Mean Square Logarithmic (to 2 sig.fig.) |
+| ------ | --------- | ----------- | --------------------------------------- |
+| 0      | 100       | 10,000      | 4                                       |
+| 0      | 15        | 225         | 1.4                                     |
+| 1      | 0         | 1           | 0.091                                   |
+| 10     | 2         | 64          | 0.31                                    |
+| 10,000 | 9,400     | 360,000     | 0.00072                                 |
 
 So what you can see here is a harsh punishment when under-evaluating (0 against 100) but a very very light punishment when the percentage difference is small (10,000 against 9,400).
 

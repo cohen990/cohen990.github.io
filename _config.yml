@@ -1,10 +1,10 @@
 # Jekyll configuration
 
-name: Hacking Dan
+name: Samantha's Thoughtress
 description: Software Developer
 
 # Url is currently only used only for the RSS feed in feed.xml
-url: http://blog.hackingdan.com
+url: http://blog.thoughtress.com
 
 # For a project page here should be a project name. Otherwise (for user's/organization's page leave it empty)
 
@@ -18,18 +18,17 @@ share:
 
 social:
   github: cohen990
-  stackoverflow: '1981037'
+  stackoverflow: "1981037"
 
 # Google Analytics key, leave blank to ignore
 google_analytics_key:
 # Yandex metrica (https://metrica.yandex.com/) leave blank to ignore or put true to use
 yandex_metrica:
 
-
 # Set this to your disqus shortname to enable comments. Note that the 'comments'
 # setting below must also be true. Individual posts can override 'comments' to
 # disable on a post-by-post basis
-disqus: cohen990 
+disqus: cohen990
 comments: true
 
 permalink: /:year/:month/:title
@@ -44,4 +43,4 @@ kramdown:
   input: GFM # Enable GitHub Flavored Markdown (fenced code blocks)
   hard_wrap: true
 
-exclude: ['README.md', 'LICENSE']
+exclude: ["README.md", "LICENSE"]
